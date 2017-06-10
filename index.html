@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Food Friends</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel=icon href="favicon.png">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf8DkYmN1wi1V9Q_KpDUhG0q3jYdX95Hw&callback=initMap&libraries=places"></script> -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		<!-- <script src="assets/js/map.js"></script> -->
+	</head>
+	<body>
+	<script>
+function showmap() {
+    document.getElementById("mep").innerHTML = "<embed id='mep' width='900' height='750' src='maptest.html' style='background-size: cover'>";
+    // document.getElementById("mep").innerHTML = "<div id='map'></div>";
+}
+function showimg1() {
+	document.getElementById("ico").innerHTML = "<img src='http://s.eatthis-cdn.com/media/images/ext/336492655/fast-food.jpg' alt='' />";
+}
+function showimg2() {
+	document.getElementById("ico").innerHTML = "<img src='https://assets.culvers.com/menu-item-images/400/web-butter-burger-deluxe-double-bacon.jpg' alt='' />";
+}
+
+</script>
+		<!-- The Modal -->
+
+		<!-- Wrapper -->
+			<div id="wrapper" ng-app="myApp" ng-controller="Ctrl">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><a href="#type" id="move"><img src="images/logo.gif" alt="" height="85%"/></a></span>
+						<h1><b>What should i eat?</b></h1>
+						<p>Your helpful friend whenever you want to eat<br />
+						</p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#type" class="active">What?</a></li>
+							<li><a href="#where">Where?</a></li>
+							<li><a href="#area">Here? There?</a></li>
+							<li><a href="#cta">Results!</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						
+						<!-- Introduction -->
+							<section id="type" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2 class="foodtype"><strong>What type of food do you want?</strong></h2>
+										</header>
+										<p>
+
+										<button type="button" width="50%" ng-model="valu" ng-value="1" ng-click="val($event)" onclick="showimg1()">Fast Food</button>
+
+										<button type="button" width="50%" ng-model="valu" ng-value="2" ng-click="val($event)">Burger</button>
+
+										<button type="button" width="50%" ng-model="valu" ng-value="3" ng-click="val($event)">Sizzling</button>
+
+										<button type="button" width="50%" ng-model="valu" ng-value="4" ng-click="val($event)">Soups/Noodles</button>
+
+										<button type="button" width="50%" ng-model="valu" ng-value="5" ng-click="val($event)">Anything!?</button>
+
+										</p>
+										<ul class="actions">
+										<br />
+											<li><a href="#where" class="button"><strong>Next>></strong></a></li>
+										</ul>
+									</div>
+									<div class="foodimg"><span class="image" id="ico"><img src="images/pic01.jpg" alt=''/></span></div>
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="where" class="main special">
+								<header class="major">
+									<h2>Location</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<!-- <span class="icon major style1 fa-code"></span> -->
+										<a href="#cta" onclick="showmap()"><img class="loct" src="marker.png" height="150px"></a>
+										<h3>Current location</h3>
+										<p>Use your current location through GPS and look for nearby shops around.</p><br />
+
+									</li>
+									<li>
+										<!-- <span class="icon major style3 fa-copy"></span> -->
+										<a href="#area"><img class="loct" src="marker2.png" height="150px"></a>
+										<h3>Specific location</h3>
+										<p>Enter your desired vicinity of search</p>
+									</li>
+									
+								</ul>
+								<footer class="major">
+									
+								</footer>
+							</section>
+
+						<!-- Second Section -->
+							<section id="area" class="main special">
+								<header class="major">
+									<h2>Please enter a location</h2>
+									<p>From where would you like to look for places to eat?</p>
+
+								</header>
+								
+								
+                                Location: <input id="Text1" type="text"  runat="server" ng-model="input" placeholder="Manila" /><br />
+                                
+                                
+
+
+                                <!-- locate = value of Location input -->
+
+								<footer class="major">
+									<ul class="actions">
+										<li><a href="#" class="button" ng-click="read()">Next</a></li>
+									</ul>
+								</footer>
+							</section>
+
+						<!-- Get Started -->
+							<section id="cta" class="main special">
+								<header class="major">
+									<h2>Result</h2>
+									<p>Here's the nearby shops found within the given parameters.</p><br />
+
+								</header>
+								<article>
+								<!-- <div id="map"></div> -->
+								<p id="mep"></p>
+								
+								</article>
+
+								<footer class="major">
+									<ul class="actions">
+										<li><a href="#" class="button special" onClick="window.location.reload()">Try Again?</a></li>
+										<li><a href="#" class="button">About us!</a></li>
+									</ul>
+								</footer>
+							
+
+					</div>
+
+				<!-- Footer -->
+				
+					<footer id="footer">
+						<section>
+							<h2>References</h2>
+							<p>Google Place Search</p>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn More</a></li>
+							</ul>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Laurence, angelo. Design: </p>
+					</footer>
+					
+
+			</div>
+
+			
+	</body>
+
+</html>
