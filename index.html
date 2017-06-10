@@ -37,6 +37,15 @@ function showimg1() {
 function showimg2() {
 	document.getElementById("ico").innerHTML = "<img src='https://assets.culvers.com/menu-item-images/400/web-butter-burger-deluxe-double-bacon.jpg' alt='' />";
 }
+function showimg3() {
+	document.getElementById("ico").innerHTML = "<img src='http://rasa.co.uk/wp-content/uploads/2015/04/Yee-Mee.jpg' alt='' />";
+}
+function showimg4() {
+	document.getElementById("ico").innerHTML = "<img src='http://clv.h-cdn.co/assets/cm/15/10/1600x800/54f4a5bf1042a_-_chicken-noodle-soup-recipe.jpg' alt='' />";
+}
+function showimg5() {
+	document.getElementById("ico").innerHTML = "<img src='https://the5krunner.com/wp-content/uploads/2015/04/recommended-icon.jpg' alt=''/>";
+}
 
 </script>
 		<!-- The Modal -->
@@ -76,13 +85,13 @@ function showimg2() {
 
 										<button type="button" width="50%" ng-model="valu" ng-value="1" ng-click="val($event)" onclick="showimg1()">Fast Food</button>
 
-										<button type="button" width="50%" ng-model="valu" ng-value="2" ng-click="val($event)">Burger</button>
+										<button type="button" width="50%" ng-model="valu" ng-value="2" ng-click="val($event)" onclick="showimg2()">Burger</button>
 
-										<button type="button" width="50%" ng-model="valu" ng-value="3" ng-click="val($event)">Sizzling</button>
+										<button type="button" width="50%" ng-model="valu" ng-value="3" ng-click="val($event)" onclick="showimg3()">Sizzling</button>
 
-										<button type="button" width="50%" ng-model="valu" ng-value="4" ng-click="val($event)">Soups/Noodles</button>
+										<button type="button" width="50%" ng-model="valu" ng-value="4" ng-click="val($event)" onclick="showimg4()">Soups/Noodles</button>
 
-										<button type="button" width="50%" ng-model="valu" ng-value="5" ng-click="val($event)">Anything!?</button>
+										<button type="button" width="50%" ng-model="valu" ng-value="5" ng-click="val($event)" onclick="showimg5()">Anything!?</button>
 
 										</p>
 										<ul class="actions">
@@ -172,9 +181,7 @@ function showimg2() {
 						<section>
 							<h2>References</h2>
 							<p>Google Place Search</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>
+							
 							<ul class="icons">
 								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
 								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
